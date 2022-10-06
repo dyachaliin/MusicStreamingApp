@@ -22,8 +22,16 @@ class AlbumCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = 10.0
-        layer.masksToBounds = true
+        contentView.layer.cornerRadius = 20.0
+        contentView.layer.masksToBounds = true
+        
+        layer.cornerRadius = 20.0
+        layer.masksToBounds = false
+        
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.3
+        layer.shadowRadius = 7.0
+        layer.shadowOffset = CGSize(width: 0, height: 5)
     }
     
     var model: AlbumCollectionItemModel! {

@@ -8,29 +8,46 @@
 import Foundation
 
 protocol MainViewDelegate: NSObjectProtocol {
-    func updatePage(model: AlbumCollectionItemModel, scrollTo: Int, animate: Bool, scroll: Bool)
+    func reloadTableView()
 }
 
 class MainViewControllertPresenter {
     weak private var mainViewDelegate: MainViewDelegate?
     
     var currentIndex: Int = 0
-    var items: [AlbumCollectionItemModel]
+    var currentAlbum: AlbumCollectionItemModel? = nil
+    var collectionItems: [AlbumCollectionItemModel]
     
     init(){
-        items = AlbumsFactory().createItems()
+        collectionItems = AlbumsFactory().createItems()
     }
     
     func setViewDelegate(mainViewDelegate: MainViewDelegate?){
         self.mainViewDelegate = mainViewDelegate
     }
     
-    func numberOfItems() -> Int {
-        return items.count
+    func numberOfCollectionItems() -> Int {
+        return collectionItems.count
     }
 
-    func model(at index: Int) -> AlbumCollectionItemModel? {
-        return items[index]
+    func collectionModel(at index: Int) -> AlbumCollectionItemModel? {
+        return collectionItems[index]
     }
+    
+    func numberOfSongItems() -> Int {
+        guard let currentAlbum = currentAlbum else { return 0 }
+        return currentAlbum.songs.count
+    }
+    
+    func songModel(at index: Int) -> SongCollectionItemModel? {
+        guard let currentAlbum = currentAlbum else { return nil }
+        return currentAlbum.songs[index]
+    }
+    
+    func setCurrentAlbum(at index: Int) {
+        self.currentAlbum = collectionItems[index]
+        mainViewDelegate?.reloadTableView()
+    }
+    
     
 }
