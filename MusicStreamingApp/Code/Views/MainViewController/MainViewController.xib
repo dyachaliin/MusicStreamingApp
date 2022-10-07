@@ -20,14 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Band" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdi-B7-aba">
-                    <rect key="frame" x="30" y="77" width="330" height="42"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="58n-bX-taG">
-                    <rect key="frame" x="0.0" y="129" width="390" height="300"/>
+                    <rect key="frame" x="0.0" y="47" width="390" height="300"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="zFT-Ct-5vy"/>
@@ -40,7 +34,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4oF-zb-iRY">
-                    <rect key="frame" x="0.0" y="439" width="390" height="371"/>
+                    <rect key="frame" x="0.0" y="357" width="390" height="453"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
@@ -49,11 +43,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4oF-zb-iRY" secondAttribute="bottom" id="2Fj-1V-w7V"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="58n-bX-taG" secondAttribute="trailing" id="2rb-ye-x5U"/>
-                <constraint firstItem="Tdi-B7-aba" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="3fo-46-aLP"/>
-                <constraint firstItem="58n-bX-taG" firstAttribute="top" secondItem="Tdi-B7-aba" secondAttribute="bottom" constant="10" id="9dG-UI-gf8"/>
-                <constraint firstItem="4oF-zb-iRY" firstAttribute="top" secondItem="58n-bX-taG" secondAttribute="bottom" constant="10" id="Cyf-1m-lMa"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Tdi-B7-aba" secondAttribute="trailing" constant="30" id="IpP-6j-2uO"/>
-                <constraint firstItem="Tdi-B7-aba" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="Mua-bU-uwl"/>
+                <constraint firstItem="58n-bX-taG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Nfa-oK-Vpn"/>
                 <constraint firstItem="4oF-zb-iRY" firstAttribute="top" secondItem="58n-bX-taG" secondAttribute="bottom" constant="10" id="fs3-Xo-CHr"/>
                 <constraint firstItem="58n-bX-taG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iKt-wl-Xzu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4oF-zb-iRY" secondAttribute="trailing" id="nr5-Pj-HcK"/>

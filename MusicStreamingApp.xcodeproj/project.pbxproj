@@ -19,6 +19,9 @@
 		5DDDDAFF28EE20EA00C246C1 /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDDAFD28EE20EA00C246C1 /* AlbumCell.xib */; };
 		5DDDDB0328EF13FE00C246C1 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDDB0128EF13FE00C246C1 /* SongCell.swift */; };
 		5DDDDB0428EF13FE00C246C1 /* SongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDDB0228EF13FE00C246C1 /* SongCell.xib */; };
+		5DDDDB0828F027F100C246C1 /* SongPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDDB0628F027F100C246C1 /* SongPlayerViewController.swift */; };
+		5DDDDB0928F027F100C246C1 /* SongPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDDB0728F027F100C246C1 /* SongPlayerViewController.xib */; };
+		5DDDDB0B28F0343300C246C1 /* SongPlayerViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDDB0A28F0343300C246C1 /* SongPlayerViewControllerPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		5DDDDAFD28EE20EA00C246C1 /* AlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
 		5DDDDB0128EF13FE00C246C1 /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		5DDDDB0228EF13FE00C246C1 /* SongCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongCell.xib; sourceTree = "<group>"; };
+		5DDDDB0628F027F100C246C1 /* SongPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPlayerViewController.swift; sourceTree = "<group>"; };
+		5DDDDB0728F027F100C246C1 /* SongPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongPlayerViewController.xib; sourceTree = "<group>"; };
+		5DDDDB0A28F0343300C246C1 /* SongPlayerViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPlayerViewControllerPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,7 @@
 		5DDDDAF728EDC93B00C246C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5DDDDB0528F027C700C246C1 /* SongPlayerViewController */,
 				5DC4D19F28ECD470002F106E /* MainViewController */,
 			);
 			path = Views;
@@ -127,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				5DDDDAF928EDCDA000C246C1 /* MainViewControllerPresenter.swift */,
+				5DDDDB0A28F0343300C246C1 /* SongPlayerViewControllerPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -147,6 +155,15 @@
 				5DDDDB0228EF13FE00C246C1 /* SongCell.xib */,
 			);
 			path = SongCell;
+			sourceTree = "<group>";
+		};
+		5DDDDB0528F027C700C246C1 /* SongPlayerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5DDDDB0628F027F100C246C1 /* SongPlayerViewController.swift */,
+				5DDDDB0728F027F100C246C1 /* SongPlayerViewController.xib */,
+			);
+			path = SongPlayerViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +226,7 @@
 			files = (
 				5DC4D19228ECC6FB002F106E /* LaunchScreen.storyboard in Resources */,
 				5DDDDB0428EF13FE00C246C1 /* SongCell.xib in Resources */,
+				5DDDDB0928F027F100C246C1 /* SongPlayerViewController.xib in Resources */,
 				5DC4D1A328ECD48C002F106E /* MainViewController.xib in Resources */,
 				5DC4D18F28ECC6FB002F106E /* Assets.xcassets in Resources */,
 				5DDDDAFF28EE20EA00C246C1 /* AlbumCell.xib in Resources */,
@@ -226,6 +244,8 @@
 				5DC4D18628ECC6FA002F106E /* AppDelegate.swift in Sources */,
 				5DDDDAFA28EDCDA000C246C1 /* MainViewControllerPresenter.swift in Sources */,
 				5DDDDB0328EF13FE00C246C1 /* SongCell.swift in Sources */,
+				5DDDDB0828F027F100C246C1 /* SongPlayerViewController.swift in Sources */,
+				5DDDDB0B28F0343300C246C1 /* SongPlayerViewControllerPresenter.swift in Sources */,
 				5DC4D1A528ECD4B3002F106E /* AlbumsFactory.swift in Sources */,
 				5DC4D18828ECC6FA002F106E /* SceneDelegate.swift in Sources */,
 				5DDDDAFE28EE20EA00C246C1 /* AlbumCell.swift in Sources */,

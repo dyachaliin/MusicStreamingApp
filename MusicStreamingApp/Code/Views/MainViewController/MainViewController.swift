@@ -20,6 +20,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "My Band"
+        navigationController?.navigationBar.prefersLargeTitles = true
         presenter.setViewDelegate(mainViewDelegate: self)
         setupCollectionView()
         setupTableView()
@@ -79,5 +81,12 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.rowHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let album = presenter.currentAlbum,
+                let song = presenter.getSelectedSong(at: indexPath.row) else { return }
+        let vc = SongPlayerViewController(presenter: SongPlayerViewControllertPresenter(album: album, song: song))
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

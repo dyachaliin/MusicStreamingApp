@@ -49,5 +49,9 @@ class MainViewControllertPresenter {
         mainViewDelegate?.reloadTableView()
     }
     
+    func getSelectedSong(at index: Int) -> SongCollectionItemModel? {
+        guard let currentAlbum = currentAlbum else { return nil }
+        return currentAlbum.songs[index]
+    }
     
 }
