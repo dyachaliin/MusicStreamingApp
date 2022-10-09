@@ -31,4 +31,24 @@ class SongPlayerViewControllertPresenter {
         self.songPlayerViewDelegate = songPlayerViewDelegate
     }
     
+    func nextSong() {
+        if let currentIndex = album.songs.firstIndex(of: song) {
+            if currentIndex == album.songs.count - 1 {
+                
+            } else {
+                song = album.songs[currentIndex + 1]
+            }
+        }
+    }
+    
+    func previousSong() {
+        if let currentIndex = album.songs.firstIndex(of: song) {
+            if currentIndex == 0 {
+                
+            } else {
+                song = album.songs[currentIndex - 1]
+            }
+        }
+    }
+    
 }

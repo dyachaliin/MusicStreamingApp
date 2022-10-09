@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SongModel {
+struct SongModel: Equatable {
     let id = UUID()
     let name: String
     let time: String

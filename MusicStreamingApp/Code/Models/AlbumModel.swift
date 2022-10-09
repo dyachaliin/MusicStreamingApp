@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AlbumModel {
+struct AlbumModel: Equatable {
     let id = UUID()
     let image: String
     let title: String

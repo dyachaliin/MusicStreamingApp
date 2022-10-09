@@ -35,7 +35,6 @@ class SongPlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.setViewDelegate(songPlayerViewDelegate: self)
-        playSong()
     }
 
     override func viewDidLayoutSubviews() {
@@ -47,6 +46,11 @@ class SongPlayerViewController: UIViewController {
         super.viewWillAppear(animated)
         setupView()
         setupPlayer()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        playSong()
     }
     
     func setupView() {
@@ -65,6 +69,10 @@ class SongPlayerViewController: UIViewController {
         albumImageView.layer.cornerRadius = 20.0
         albumImageView.clipsToBounds = true
         
+        setLabelText()
+    }
+    
+    func setLabelText() {
         songNameLabel.text = presenter.song.name
     }
     
@@ -81,14 +89,30 @@ class SongPlayerViewController: UIViewController {
     
     
     @IBAction func playPauseBtnTapped(_ sender: UIButton) {
-        if presenter.isPlaying == true {
+        presenter.isPlaying.toggle()
+        
+        if presenter.isPlaying == false {
             player.pause()
         } else {
             player.play()
         }
-        
-        presenter.isPlaying.toggle()
     }
+    
+    
+    @IBAction func previousSongTapped(_ sender: UIButton) {
+        player.pause()
+        presenter.previousSong()
+        playSong()
+        setLabelText()
+    }
+    
+    @IBAction func nextSongTapped(_ sender: UIButton) {
+        player.pause()
+        presenter.nextSong()
+        playSong()
+        setLabelText()
+    }
+    
     
     private func playSong() {
         let storage = Storage.storage().reference(forURL: presenter.song.file)
@@ -96,6 +120,13 @@ class SongPlayerViewController: UIViewController {
             if error != nil {
                print(error)
             } else {
+                do {
+                    try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+                }
+                catch {
+                    
+                }
+                
                 self.player = AVPlayer(playerItem: AVPlayerItem(url: url!))
                 self.player.play()
             }
