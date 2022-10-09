@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "My Band"
+        title = "My Albums"
         navigationController?.navigationBar.prefersLargeTitles = true
         presenter.setViewDelegate(mainViewDelegate: self)
         setupCollectionView()
@@ -42,6 +42,10 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: MainViewDelegate {
+    func reloadCollection() {
+        albumsCollectionView.reloadData()
+    }
+    
     func reloadTableView() {
         songTableView.reloadData()
     }

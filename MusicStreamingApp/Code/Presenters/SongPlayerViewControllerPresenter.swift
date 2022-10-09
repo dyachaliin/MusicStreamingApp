@@ -14,15 +14,15 @@ protocol SongPlayerViewDelegate: NSObjectProtocol {
 class SongPlayerViewControllertPresenter {
     weak private var songPlayerViewDelegate: SongPlayerViewDelegate?
     
-    var song: SongCollectionItemModel
-    var album: AlbumCollectionItemModel
-    var isPlaying: Bool = false {
+    var song: SongModel
+    var album: AlbumModel
+    var isPlaying: Bool = true {
         didSet {
             songPlayerViewDelegate?.togglePlayPauseBtn()
         }
     }
     
-    init(album: AlbumCollectionItemModel, song: SongCollectionItemModel) {
+    init(album: AlbumModel, song: SongModel) {
         self.album = album
         self.song = song
     }

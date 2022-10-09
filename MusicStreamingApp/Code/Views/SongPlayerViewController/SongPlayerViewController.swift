@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import FirebaseStorage
+import AVFoundation
 
 class SongPlayerViewController: UIViewController {
 
     private let presenter: SongPlayerViewControllertPresenter
+    private var player = AVPlayer()
     
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -32,6 +35,7 @@ class SongPlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.setViewDelegate(songPlayerViewDelegate: self)
+        playSong()
     }
 
     override func viewDidLayoutSubviews() {
@@ -46,7 +50,7 @@ class SongPlayerViewController: UIViewController {
     }
     
     func setupView() {
-        backgroundImageView.image = presenter.album.image
+        backgroundImageView.image = UIImage(named: presenter.album.image)
         backgroundImageView.contentMode = .scaleAspectFill
         
         outerView.clipsToBounds = false
@@ -56,7 +60,7 @@ class SongPlayerViewController: UIViewController {
         outerView.layer.shadowRadius = 7
         outerView.layer.cornerRadius = 20.0
         
-        albumImageView.image = presenter.album.image
+        albumImageView.image = UIImage(named: presenter.album.image)
         albumImageView.contentMode = .scaleAspectFill
         albumImageView.layer.cornerRadius = 20.0
         albumImageView.clipsToBounds = true
@@ -77,7 +81,25 @@ class SongPlayerViewController: UIViewController {
     
     
     @IBAction func playPauseBtnTapped(_ sender: UIButton) {
+        if presenter.isPlaying == true {
+            player.pause()
+        } else {
+            player.play()
+        }
+        
         presenter.isPlaying.toggle()
+    }
+    
+    private func playSong() {
+        let storage = Storage.storage().reference(forURL: presenter.song.file)
+        storage.downloadURL { (url, error) in
+            if error != nil {
+               print(error)
+            } else {
+                self.player = AVPlayer(playerItem: AVPlayerItem(url: url!))
+                self.player.play()
+            }
+        }
     }
     
 }

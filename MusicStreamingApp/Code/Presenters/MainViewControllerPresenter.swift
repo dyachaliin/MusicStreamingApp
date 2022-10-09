@@ -9,17 +9,22 @@ import Foundation
 
 protocol MainViewDelegate: NSObjectProtocol {
     func reloadTableView()
+    func reloadCollection()
 }
 
 class MainViewControllertPresenter {
     weak private var mainViewDelegate: MainViewDelegate?
     
     var currentIndex: Int = 0
-    var currentAlbum: AlbumCollectionItemModel? = nil
-    var collectionItems: [AlbumCollectionItemModel]
+    var currentAlbum: AlbumModel? = nil
+    var collectionItems = [AlbumModel]()
+    var data = Data()
     
-    init(){
-        collectionItems = AlbumsFactory().createItems()
+    init() {
+        data.loadAlbums {
+            self.collectionItems = self.data.albums
+            self.mainViewDelegate?.reloadCollection()
+        }
     }
     
     func setViewDelegate(mainViewDelegate: MainViewDelegate?){
@@ -30,7 +35,7 @@ class MainViewControllertPresenter {
         return collectionItems.count
     }
 
-    func collectionModel(at index: Int) -> AlbumCollectionItemModel? {
+    func collectionModel(at index: Int) -> AlbumModel? {
         return collectionItems[index]
     }
     
@@ -39,7 +44,7 @@ class MainViewControllertPresenter {
         return currentAlbum.songs.count
     }
     
-    func songModel(at index: Int) -> SongCollectionItemModel? {
+    func songModel(at index: Int) -> SongModel? {
         guard let currentAlbum = currentAlbum else { return nil }
         return currentAlbum.songs[index]
     }
@@ -49,7 +54,7 @@ class MainViewControllertPresenter {
         mainViewDelegate?.reloadTableView()
     }
     
-    func getSelectedSong(at index: Int) -> SongCollectionItemModel? {
+    func getSelectedSong(at index: Int) -> SongModel? {
         guard let currentAlbum = currentAlbum else { return nil }
         return currentAlbum.songs[index]
     }

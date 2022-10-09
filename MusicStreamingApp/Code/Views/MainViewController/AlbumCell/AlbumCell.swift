@@ -34,10 +34,10 @@ class AlbumCell: UICollectionViewCell {
         layer.shadowOffset = CGSize(width: 0, height: 5)
     }
     
-    var model: AlbumCollectionItemModel! {
+    var model: AlbumModel! {
         didSet {
             if let model = model {
-                albumImageView.image = model.image
+                albumImageView.image = UIImage(named: model.image)
                 albumLabel.text = model.title
             }
         }

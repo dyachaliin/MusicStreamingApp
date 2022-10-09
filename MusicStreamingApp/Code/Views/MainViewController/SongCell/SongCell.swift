@@ -23,7 +23,7 @@ class SongCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func set(model: SongCollectionItemModel) {
+    func set(model: SongModel) {
         songNameLabel.text = model.name
         songDurationLabel.text = model.time
     }
