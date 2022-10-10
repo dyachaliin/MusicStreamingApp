@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         title = "My Albums"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemTeal]
         presenter.setViewDelegate(mainViewDelegate: self)
         setupCollectionView()
         setupTableView()
@@ -31,12 +32,14 @@ class MainViewController: UIViewController {
         albumsCollectionView.register(UINib(nibName: "AlbumCell", bundle: nil), forCellWithReuseIdentifier: AlbumCell.identifier)
         albumsCollectionView.delegate = self
         albumsCollectionView.dataSource = self
+        albumsCollectionView.backgroundColor = .white
     }
     
     func setupTableView() {
         songTableView.register(UINib(nibName: "SongCell", bundle: nil), forCellReuseIdentifier: SongCell.identifier)
         songTableView.delegate = self
         songTableView.dataSource = self
+        songTableView.backgroundColor = .white
     }
 
 }
@@ -78,6 +81,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: SongCell.identifier) as? SongCell,
             let model = presenter.songModel(at: indexPath.row) {
             cell.set(model: model)
+            cell.selectionStyle = .none
             return cell
         }
         return UITableViewCell()

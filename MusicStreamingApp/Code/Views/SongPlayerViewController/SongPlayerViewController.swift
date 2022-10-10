@@ -22,6 +22,7 @@ class SongPlayerViewController: UIViewController {
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var playButtonBackground: UIImageView!
     
     required init(presenter: SongPlayerViewControllertPresenter) {
         self.presenter = presenter
@@ -40,6 +41,7 @@ class SongPlayerViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         playerView.layer.cornerRadius = 20.0
+        playButtonBackground.layer.cornerRadius = playButtonBackground.frame.width/2
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +70,8 @@ class SongPlayerViewController: UIViewController {
         albumImageView.contentMode = .scaleAspectFill
         albumImageView.layer.cornerRadius = 20.0
         albumImageView.clipsToBounds = true
+        
+        playButtonBackground.image = UIImage(named: "backgroundCircle")
         
         setLabelText()
     }
@@ -137,8 +141,7 @@ class SongPlayerViewController: UIViewController {
 
 extension SongPlayerViewController: SongPlayerViewDelegate {
     func togglePlayPauseBtn() {
-        let largeConfiguration = UIImage.SymbolConfiguration(pointSize: 40, weight: .bold, scale: .large)
-        let playPauseImage = UIImage(systemName: presenter.isPlaying ? "pause.circle.fill" : "play.circle.fill", withConfiguration: largeConfiguration)
-        playPauseButton.setImage(playPauseImage, for: .normal)
+        let image = UIImage(named: presenter.isPlaying ? "pause" : "play")!
+        playPauseButton.setImage(image, for: .normal)
     }
 }

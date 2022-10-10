@@ -129,6 +129,7 @@
 		5DC4D19E28ECD03D002F106E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5DDDDB1828F487B500C246C1 /* Extensions */,
 				5DC4D18E28ECC6FB002F106E /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -205,6 +206,13 @@
 				5DDDDB1428F35D9D00C246C1 /* AlbumModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5DDDDB1828F487B500C246C1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9FC4976056AE3261AFD8D9E7 /* Frameworks */ = {

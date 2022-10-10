@@ -38,6 +38,7 @@ class AlbumCell: UICollectionViewCell {
         didSet {
             if let model = model {
                 albumImageView.image = UIImage(named: model.image)
+                albumLabel.numberOfLines = 0
                 albumLabel.text = model.title
             }
         }

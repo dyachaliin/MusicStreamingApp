@@ -15,6 +15,7 @@
                 <outlet property="backgroundImageView" destination="iAd-go-Soe" id="Kni-dd-rJV"/>
                 <outlet property="nextButton" destination="0Or-8t-5io" id="ynT-M1-7Z6"/>
                 <outlet property="outerView" destination="mgq-Dz-aJY" id="Fw2-g1-zaP"/>
+                <outlet property="playButtonBackground" destination="mR3-wT-3x9" id="zo5-P7-d5r"/>
                 <outlet property="playPauseButton" destination="fuo-WR-pdz" id="PdA-bz-FKv"/>
                 <outlet property="playerView" destination="nRc-Ja-aJx" id="1iI-X4-lpr"/>
                 <outlet property="previousButton" destination="DBs-Kb-KqK" id="IR1-ji-1TH"/>
@@ -69,23 +70,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRc-Ja-aJx">
                                 <rect key="frame" x="0.0" y="614" width="390" height="230"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuo-WR-pdz">
-                                        <rect key="frame" x="160" y="80" width="70" height="70"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="7Ar-c2-1rN"/>
-                                            <constraint firstAttribute="width" constant="70" id="FvD-d5-APt"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal">
-                                            <imageReference key="image" image="play.circle.fill" catalog="system" symbolScale="large" variableValue="0.0"/>
-                                        </state>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <imageReference key="image" image="play.circle.fill" catalog="system" symbolScale="large" variableValue="0.0"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="playPauseBtnTapped:" destination="-1" eventType="touchUpInside" id="Cf0-nh-klK"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBs-Kb-KqK">
                                         <rect key="frame" x="90" y="90" width="50" height="50"/>
                                         <constraints>
@@ -112,16 +96,44 @@
                                             <action selector="nextSongTapped:" destination="-1" eventType="touchUpInside" id="Tt0-L4-fCf"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mR3-wT-3x9" customClass="UIImageView">
+                                        <rect key="frame" x="165" y="85" width="60" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuo-WR-pdz">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="7Ar-c2-1rN"/>
+                                                    <constraint firstAttribute="width" constant="60" id="FvD-d5-APt"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal">
+                                                    <imageReference key="image" image="play.circle.fill" catalog="system" symbolScale="large" variableValue="0.0"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <imageReference key="image" image="play" symbolScale="large" variableValue="0.0"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="playPauseBtnTapped:" destination="-1" eventType="touchUpInside" id="Cf0-nh-klK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="fuo-WR-pdz" firstAttribute="centerX" secondItem="mR3-wT-3x9" secondAttribute="centerX" id="UVW-8w-ANp"/>
+                                            <constraint firstAttribute="height" constant="60" id="gNQ-a2-1h5"/>
+                                            <constraint firstItem="fuo-WR-pdz" firstAttribute="centerY" secondItem="mR3-wT-3x9" secondAttribute="centerY" id="gXm-sk-cCc"/>
+                                            <constraint firstAttribute="width" constant="60" id="xUl-zZ-WU0"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="fuo-WR-pdz" firstAttribute="centerX" secondItem="nRc-Ja-aJx" secondAttribute="centerX" id="5AE-mg-mFs"/>
-                                    <constraint firstItem="0Or-8t-5io" firstAttribute="centerY" secondItem="fuo-WR-pdz" secondAttribute="centerY" id="BrC-Hz-j2U"/>
-                                    <constraint firstItem="fuo-WR-pdz" firstAttribute="centerY" secondItem="nRc-Ja-aJx" secondAttribute="centerY" id="EF8-X3-WB4"/>
+                                    <constraint firstItem="mR3-wT-3x9" firstAttribute="leading" secondItem="DBs-Kb-KqK" secondAttribute="trailing" constant="25" id="BoR-H0-hAr"/>
                                     <constraint firstAttribute="height" constant="230" id="GEz-dN-qFZ"/>
-                                    <constraint firstItem="0Or-8t-5io" firstAttribute="leading" secondItem="fuo-WR-pdz" secondAttribute="trailing" constant="20" id="VjZ-JU-7Wj"/>
-                                    <constraint firstItem="fuo-WR-pdz" firstAttribute="leading" secondItem="DBs-Kb-KqK" secondAttribute="trailing" constant="20" id="kzf-ri-b48"/>
-                                    <constraint firstItem="DBs-Kb-KqK" firstAttribute="centerY" secondItem="fuo-WR-pdz" secondAttribute="centerY" id="upf-mh-iEU"/>
+                                    <constraint firstItem="mR3-wT-3x9" firstAttribute="centerY" secondItem="nRc-Ja-aJx" secondAttribute="centerY" id="INr-ky-Llz"/>
+                                    <constraint firstItem="0Or-8t-5io" firstAttribute="leading" secondItem="mR3-wT-3x9" secondAttribute="trailing" constant="25" id="aaa-PK-E5r"/>
+                                    <constraint firstItem="DBs-Kb-KqK" firstAttribute="centerY" secondItem="mR3-wT-3x9" secondAttribute="centerY" id="mIW-y8-g6g"/>
+                                    <constraint firstItem="mR3-wT-3x9" firstAttribute="centerX" secondItem="nRc-Ja-aJx" secondAttribute="centerX" id="sw6-Gj-K5u"/>
+                                    <constraint firstItem="0Or-8t-5io" firstAttribute="centerY" secondItem="mR3-wT-3x9" secondAttribute="centerY" id="waL-5M-dIt"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -133,7 +145,7 @@
                             <constraint firstAttribute="trailing" secondItem="nRc-Ja-aJx" secondAttribute="trailing" id="lxy-RZ-FDh"/>
                         </constraints>
                     </view>
-                    <blurEffect style="regular"/>
+                    <blurEffect style="light"/>
                 </visualEffectView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -154,6 +166,7 @@
     <resources>
         <image name="arrow.left.circle" catalog="system" width="128" height="123"/>
         <image name="arrow.right.circle" catalog="system" width="128" height="123"/>
+        <image name="play" width="32" height="32"/>
         <image name="play.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

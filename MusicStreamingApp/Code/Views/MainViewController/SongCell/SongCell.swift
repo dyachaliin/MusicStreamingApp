@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftGifOrigin
 
 class SongCell: UITableViewCell {
     
@@ -13,10 +14,10 @@ class SongCell: UITableViewCell {
 
     @IBOutlet weak var songNameLabel: UILabel!
     @IBOutlet weak var songDurationLabel: UILabel!
+    @IBOutlet weak var cdImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,7 +26,10 @@ class SongCell: UITableViewCell {
     
     func set(model: SongModel) {
         songNameLabel.text = model.name
+        songNameLabel.textColor = .black
         songDurationLabel.text = model.time
+        songDurationLabel.textColor = .black
+        cdImage.loadGif(asset: "cd")
     }
     
 }

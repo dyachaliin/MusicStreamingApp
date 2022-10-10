@@ -25,8 +25,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="170" height="50"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Jg-wJ-1bQ">
-                                    <rect key="frame" x="64" y="14.666666666666657" width="42" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Jg-wJ-1bQ">
+                                    <rect key="frame" x="10" y="14.999999999999998" width="150" height="20.333333333333329"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -34,17 +34,20 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="0Jg-wJ-1bQ" firstAttribute="centerX" secondItem="fgI-Dy-ALr" secondAttribute="centerX" id="5BV-as-D9r"/>
+                                <constraint firstAttribute="trailing" secondItem="0Jg-wJ-1bQ" secondAttribute="trailing" constant="10" id="Jyu-qb-gKK"/>
                                 <constraint firstItem="0Jg-wJ-1bQ" firstAttribute="centerY" secondItem="fgI-Dy-ALr" secondAttribute="centerY" id="N2O-uv-uKf"/>
+                                <constraint firstItem="0Jg-wJ-1bQ" firstAttribute="leading" secondItem="fgI-Dy-ALr" secondAttribute="leading" constant="10" id="kgV-s3-Ihs"/>
                             </constraints>
                         </view>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="Rce-f1-pic"/>
                         </constraints>
-                        <blurEffect style="regular"/>
+                        <blurEffect style="light"/>
                     </visualEffectView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="1wv-II-NQG" secondAttribute="bottom" id="903-ZC-vi3"/>
                 <constraint firstItem="1wv-II-NQG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="BhR-Bo-gcs"/>
