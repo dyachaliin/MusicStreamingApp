@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseStorage
 import AVFoundation
+import Tom
 
 class SongPlayerViewController: UIViewController {
 
@@ -23,6 +24,8 @@ class SongPlayerViewController: UIViewController {
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var playButtonBackground: UIImageView!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var equalizerView: TomView!
     
     required init(presenter: SongPlayerViewControllertPresenter) {
         self.presenter = presenter
@@ -35,7 +38,9 @@ class SongPlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        modalTransitionStyle = .crossDissolve
         presenter.setViewDelegate(songPlayerViewDelegate: self)
+        setBackButton()
     }
 
     override func viewDidLayoutSubviews() {
@@ -52,7 +57,9 @@ class SongPlayerViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        equalizerView.start()
         playSong()
+       
     }
     
     func setupView() {
@@ -80,17 +87,18 @@ class SongPlayerViewController: UIViewController {
         songNameLabel.text = presenter.song.name
     }
     
-    func setupPlayer() {
-        togglePlayPauseBtn()
-        
-        let mediumConfiguration = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold, scale: .large)
-        let previousImage = UIImage(systemName: "arrow.left.circle", withConfiguration: mediumConfiguration)
-        previousButton.setImage(previousImage, for: .normal)
-        
-        let nextImage = UIImage(systemName: "arrow.right.circle", withConfiguration: mediumConfiguration)
-        nextButton.setImage(nextImage, for: .normal)
+    func setBackButton() {
+        let image = UIImage(named: "backButton")
+        backButton.setImage(image, for: .normal)
     }
     
+    func setupPlayer() {
+        togglePlayPauseBtn()
+    }
+    
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
     
     @IBAction func playPauseBtnTapped(_ sender: UIButton) {
         presenter.isPlaying.toggle()

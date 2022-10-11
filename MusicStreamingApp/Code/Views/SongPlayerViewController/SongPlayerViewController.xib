@@ -12,7 +12,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SongPlayerViewController" customModule="MusicStreamingApp" customModuleProvider="target">
             <connections>
                 <outlet property="albumImageView" destination="A1B-gB-9Bc" id="GJW-i7-1MC"/>
+                <outlet property="backButton" destination="IOv-v9-dbd" id="Min-1v-9cR"/>
                 <outlet property="backgroundImageView" destination="iAd-go-Soe" id="Kni-dd-rJV"/>
+                <outlet property="equalizerView" destination="7Ju-Su-eZr" id="BG1-43-kmR"/>
                 <outlet property="nextButton" destination="0Or-8t-5io" id="ynT-M1-7Z6"/>
                 <outlet property="outerView" destination="mgq-Dz-aJY" id="Fw2-g1-zaP"/>
                 <outlet property="playButtonBackground" destination="mR3-wT-3x9" id="zo5-P7-d5r"/>
@@ -38,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Cdy-Zq-zhC">
-                                <rect key="frame" x="70" y="215" width="250" height="354"/>
+                                <rect key="frame" x="70" y="160" width="250" height="464"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgq-Dz-aJY">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="300"/>
@@ -65,39 +67,65 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ju-Su-eZr" customClass="TomView" customModule="Tom">
+                                        <rect key="frame" x="5" y="384" width="240" height="80"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="G3q-5R-OdE"/>
+                                            <constraint firstAttribute="height" constant="80" id="fPX-sw-HFE"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineCount">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                <color key="value" systemColor="systemTealColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineSpacing">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="minLineThickness">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="animationSpeed">
+                                                <real key="value" value="0.25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="Vertical" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRc-Ja-aJx">
-                                <rect key="frame" x="0.0" y="614" width="390" height="230"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRc-Ja-aJx" customClass="PlayerView" customModule="MusicStreamingApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="674" width="390" height="250"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBs-Kb-KqK">
-                                        <rect key="frame" x="90" y="90" width="50" height="50"/>
+                                        <rect key="frame" x="90" y="70" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="KDu-Dm-1qw"/>
                                             <constraint firstAttribute="height" constant="50" id="tre-9j-b7g"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="systemGray2Color"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="arrow.left.circle" catalog="system"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="previous"/>
                                         <connections>
                                             <action selector="previousSongTapped:" destination="-1" eventType="touchUpInside" id="Kge-PU-lPJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Or-8t-5io">
-                                        <rect key="frame" x="250" y="90" width="50" height="50"/>
+                                        <rect key="frame" x="250" y="70" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="blX-GB-xe0"/>
                                             <constraint firstAttribute="height" constant="50" id="jxi-tb-Sje"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="systemGray2Color"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="arrow.right.circle" catalog="system"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="next"/>
                                         <connections>
                                             <action selector="nextSongTapped:" destination="-1" eventType="touchUpInside" id="Tt0-L4-fCf"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mR3-wT-3x9" customClass="UIImageView">
-                                        <rect key="frame" x="165" y="85" width="60" height="60"/>
+                                        <rect key="frame" x="165" y="65" width="60" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuo-WR-pdz">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -128,21 +156,35 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="mR3-wT-3x9" firstAttribute="leading" secondItem="DBs-Kb-KqK" secondAttribute="trailing" constant="25" id="BoR-H0-hAr"/>
-                                    <constraint firstAttribute="height" constant="230" id="GEz-dN-qFZ"/>
-                                    <constraint firstItem="mR3-wT-3x9" firstAttribute="centerY" secondItem="nRc-Ja-aJx" secondAttribute="centerY" id="INr-ky-Llz"/>
+                                    <constraint firstAttribute="height" constant="250" id="GEz-dN-qFZ"/>
+                                    <constraint firstItem="mR3-wT-3x9" firstAttribute="centerY" secondItem="nRc-Ja-aJx" secondAttribute="centerY" constant="-30" id="INr-ky-Llz"/>
                                     <constraint firstItem="0Or-8t-5io" firstAttribute="leading" secondItem="mR3-wT-3x9" secondAttribute="trailing" constant="25" id="aaa-PK-E5r"/>
                                     <constraint firstItem="DBs-Kb-KqK" firstAttribute="centerY" secondItem="mR3-wT-3x9" secondAttribute="centerY" id="mIW-y8-g6g"/>
                                     <constraint firstItem="mR3-wT-3x9" firstAttribute="centerX" secondItem="nRc-Ja-aJx" secondAttribute="centerX" id="sw6-Gj-K5u"/>
                                     <constraint firstItem="0Or-8t-5io" firstAttribute="centerY" secondItem="mR3-wT-3x9" secondAttribute="centerY" id="waL-5M-dIt"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOv-v9-dbd">
+                                <rect key="frame" x="20" y="50" width="43" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="43" id="UWx-pH-TDO"/>
+                                    <constraint firstAttribute="height" constant="43" id="y4T-nt-MNA"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="-1" eventType="touchUpInside" id="UtI-Qd-O8P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Cdy-Zq-zhC" firstAttribute="centerY" secondItem="1Wn-Hx-KgK" secondAttribute="centerY" constant="-30" id="C5Q-ar-WfA"/>
+                            <constraint firstItem="IOv-v9-dbd" firstAttribute="leading" secondItem="1Wn-Hx-KgK" secondAttribute="leading" constant="20" id="Jh5-hR-Mfd"/>
                             <constraint firstItem="Cdy-Zq-zhC" firstAttribute="centerX" secondItem="1Wn-Hx-KgK" secondAttribute="centerX" id="PEt-nh-gHg"/>
-                            <constraint firstAttribute="bottom" secondItem="nRc-Ja-aJx" secondAttribute="bottom" id="VBC-4G-Btf"/>
+                            <constraint firstAttribute="bottom" secondItem="nRc-Ja-aJx" secondAttribute="bottom" constant="-80" id="VBC-4G-Btf"/>
                             <constraint firstItem="nRc-Ja-aJx" firstAttribute="leading" secondItem="1Wn-Hx-KgK" secondAttribute="leading" id="dbb-6A-JKJ"/>
                             <constraint firstAttribute="trailing" secondItem="nRc-Ja-aJx" secondAttribute="trailing" id="lxy-RZ-FDh"/>
+                            <constraint firstItem="IOv-v9-dbd" firstAttribute="top" secondItem="1Wn-Hx-KgK" secondAttribute="top" constant="50" id="mU3-Fv-jkX"/>
                         </constraints>
                     </view>
                     <blurEffect style="light"/>
@@ -164,15 +206,18 @@
         </view>
     </objects>
     <resources>
-        <image name="arrow.left.circle" catalog="system" width="128" height="123"/>
-        <image name="arrow.right.circle" catalog="system" width="128" height="123"/>
+        <image name="next" width="30" height="30"/>
         <image name="play" width="32" height="32"/>
         <image name="play.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="previous" width="30" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

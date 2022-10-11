@@ -95,6 +95,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         guard let album = presenter.currentAlbum,
                 let song = presenter.getSelectedSong(at: indexPath.row) else { return }
         let vc = SongPlayerViewController(presenter: SongPlayerViewControllertPresenter(album: album, song: song))
-        navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        navigationController?.present(vc, animated: true)
     }
 }

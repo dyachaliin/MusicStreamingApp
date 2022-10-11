@@ -25,6 +25,7 @@
 		5DDDDB1028F2B91E00C246C1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDDB0F28F2B91E00C246C1 /* Data.swift */; };
 		5DDDDB1328F35D8700C246C1 /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDDB1228F35D8700C246C1 /* SongModel.swift */; };
 		5DDDDB1528F35D9D00C246C1 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDDB1428F35D9D00C246C1 /* AlbumModel.swift */; };
+		5DDDDB1C28F5769600C246C1 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDDB1B28F5769600C246C1 /* PlayerView.swift */; };
 		D649E7D8EECA0C15FCF753FF /* Pods_MusicStreamingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE78642A8272B79398535AE6 /* Pods_MusicStreamingApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		5DDDDB0F28F2B91E00C246C1 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		5DDDDB1228F35D8700C246C1 /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
 		5DDDDB1428F35D9D00C246C1 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		5DDDDB1B28F5769600C246C1 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		7CD6F7A519E8CF2B59A03ACD /* Pods-MusicStreamingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicStreamingApp.release.xcconfig"; path = "Target Support Files/Pods-MusicStreamingApp/Pods-MusicStreamingApp.release.xcconfig"; sourceTree = "<group>"; };
 		DEDDEFD86BB9DF01C3A61A28 /* Pods-MusicStreamingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicStreamingApp.debug.xcconfig"; path = "Target Support Files/Pods-MusicStreamingApp/Pods-MusicStreamingApp.debug.xcconfig"; sourceTree = "<group>"; };
 		EE78642A8272B79398535AE6 /* Pods_MusicStreamingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicStreamingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +189,7 @@
 			children = (
 				5DDDDB0628F027F100C246C1 /* SongPlayerViewController.swift */,
 				5DDDDB0728F027F100C246C1 /* SongPlayerViewController.xib */,
+				5DDDDB1B28F5769600C246C1 /* PlayerView.swift */,
 			);
 			path = SongPlayerViewController;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				5DC4D1A228ECD48C002F106E /* MainViewController.swift in Sources */,
 				5DDDDB1528F35D9D00C246C1 /* AlbumModel.swift in Sources */,
 				5DDDDB1328F35D8700C246C1 /* SongModel.swift in Sources */,
+				5DDDDB1C28F5769600C246C1 /* PlayerView.swift in Sources */,
 				5DDDDB1028F2B91E00C246C1 /* Data.swift in Sources */,
 				5DC4D18628ECC6FA002F106E /* AppDelegate.swift in Sources */,
 				5DDDDAFA28EDCDA000C246C1 /* MainViewControllerPresenter.swift in Sources */,
@@ -490,6 +494,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4SPJS2ZBYA;
@@ -518,6 +523,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4SPJS2ZBYA;
